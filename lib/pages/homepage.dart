@@ -41,13 +41,19 @@ class _HomepageState extends State<Homepage> {
       body: Padding( 
         padding: const EdgeInsets.all(16.0),
         child: (CatalogModel.items !=null && CatalogModel.items.isNotEmpty)
-        ?ListView.builder(
-          itemCount: CatalogModel.items.length,
-          itemBuilder: (context, index) => 
-             ItemWidget(
-              item: CatalogModel.items[index],
-            ),
-        )
+        ? GridView.builder(
+          gridDelegate: gridDelegate,
+           itemBuilder: itemBuilder, 
+           itemCount: CatalogModel.items.length,
+           )
+        // listView and gridView both are used in this app you can choose in anyone one
+        // ?ListView.builder(
+        //   itemCount: CatalogModel.items.length,
+        //   itemBuilder: (context, index) => 
+        //      ItemWidget(
+        //       item: CatalogModel.items[index],
+        //     ),
+        // )
         :Center(
           child: CircularProgressIndicator(),
         )
