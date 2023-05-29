@@ -49,7 +49,7 @@ class _HomepageState extends State<Homepage> {
                   CatalogList().expand()
                 else
                 
-                  CircularProgressIndicator().centered().expand(),
+                  CircularProgressIndicator().centered(),
                   
               ],
             ),
